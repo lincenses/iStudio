@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,6 +46,10 @@
     <Compile Include="Configuration\ConfigurationItem.cs" />
     <Compile Include="Configuration\DatabaseConfiguration.cs" />
     <Compile Include="Configuration\LanguageConfiguration.cs" />
+    <Compile Include="Extension\FormExtension.cs" />
+    <Compile Include="Extension\MenuStripExtension.cs" />
+    <Compile Include="Monitor\DebugMonitor.cs" />
+    <Compile Include="Monitor\MonitorMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\Admin.cs" />
     <Compile Include="Security\DESManager.cs" />
@@ -53,6 +58,7 @@
     <Compile Include="Security\SHA256Manager.cs" />
     <Compile Include="Security\SHA384Manager.cs" />
     <Compile Include="Security\SHA512Manager.cs" />
+    <Compile Include="StudioNative\StudioNative.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

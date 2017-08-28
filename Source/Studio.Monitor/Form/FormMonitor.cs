@@ -34,6 +34,13 @@ namespace Studio.Monitor
         private void InitializeForm()
         {
             Text = Program.MonitorTitle;
+            Size = new Size(640, 400);
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            string iconResourceName = assembly.GetManifestResourceNames().FirstOrDefault(x => x.EndsWith("Program.ico"));
+            if (!string.IsNullOrWhiteSpace(iconResourceName))
+            {
+                Icon = new Icon(assembly.GetManifestResourceStream(iconResourceName));
+            }
             _MonitorRichTextBox = new MonitorRichTextBox()
             {
                 ReadOnly = true,
