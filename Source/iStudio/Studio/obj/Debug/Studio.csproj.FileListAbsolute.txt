@@ -1,5 +1,0 @@
-E:\iWork\iStudio\Source\iStudio\Studio\bin\Debug\Studio.dll
-E:\iWork\iStudio\Source\iStudio\Studio\bin\Debug\Studio.pdb
-E:\iWork\iStudio\Source\iStudio\Studio\obj\Debug\Studio.csprojResolveAssemblyReference.cache
-E:\iWork\iStudio\Source\iStudio\Studio\obj\Debug\Studio.dll
-E:\iWork\iStudio\Source\iStudio\Studio\obj\Debug\Studio.pdb
