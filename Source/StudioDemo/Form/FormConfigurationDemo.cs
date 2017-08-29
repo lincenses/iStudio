@@ -44,7 +44,7 @@ namespace StudioDemo
                 configuration.UserID = "sa";
                 configuration.Password = "Admin123456";
                 configuration.Save(dialog.FileName, true);
-                
+                webBrowser1.Url = new Uri(dialog.FileName);
             }
         }
         #endregion
@@ -52,7 +52,7 @@ namespace StudioDemo
         #region 读取数据库配置文件
         private void ToolStripButton2_Click(object sender, EventArgs e)
         {
-            
+            webBrowser1.Url = null;
         }
         #endregion
     }

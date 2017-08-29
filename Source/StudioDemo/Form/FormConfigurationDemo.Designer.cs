@@ -32,7 +32,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,22 +66,21 @@
             this.toolStripButton2.Size = new System.Drawing.Size(120, 22);
             this.toolStripButton2.Text = "读取数据库配置文件";
             // 
-            // treeView1
+            // webBrowser1
             // 
-            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.treeView1.Location = new System.Drawing.Point(12, 28);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(760, 421);
-            this.treeView1.TabIndex = 1;
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 25);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(784, 436);
+            this.webBrowser1.TabIndex = 1;
             // 
             // FormConfigurationDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "FormConfigurationDemo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -98,6 +97,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

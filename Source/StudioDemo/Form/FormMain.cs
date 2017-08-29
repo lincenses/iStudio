@@ -19,6 +19,17 @@ namespace StudioDemo
             InitializeEvent();
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams createParams = base.CreateParams;
+                createParams.ExStyle |= 0x02000000;
+                //createParams.Style ^= 0x00C00000; //WS_CAPTION
+                return createParams;
+            }
+        }
+
         #region 初始化窗体
         private void InitializeForm()
         {
