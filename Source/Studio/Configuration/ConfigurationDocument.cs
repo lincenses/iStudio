@@ -194,8 +194,7 @@ namespace Studio.Configuration
                                     if (xItemEncryptedAttribute != null && !string.IsNullOrWhiteSpace(xItemEncryptedAttribute.Value))
                                     {
                                         // 如果encrypted属性可以转换成bool类型的值。
-                                        bool encrypted = false;
-                                        if (bool.TryParse(xItemEncryptedAttribute.Value, out encrypted))
+                                        if (bool.TryParse(xItemEncryptedAttribute.Value, out bool encrypted))
                                         {
                                             // 赋值配置项的加密属性。
                                             configurationItem.Encrypted = encrypted;

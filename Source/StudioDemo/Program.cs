@@ -13,6 +13,8 @@ namespace StudioDemo
         [STAThread]
         static void Main()
         {
+            Studio.Configuration.DatabaseConfiguration configuration = new Studio.Configuration.DatabaseConfiguration();
+            string cnnectionString = configuration.GetConnectionStringBuilder(30).ConnectionString;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMain());
