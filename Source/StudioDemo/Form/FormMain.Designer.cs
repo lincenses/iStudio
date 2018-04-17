@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemConfiguration = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemMonitor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,8 @@
             // toolStripMenuItemFile
             // 
             this.toolStripMenuItemFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemConfiguration});
+            this.toolStripMenuItemConfiguration,
+            this.toolStripMenuItemMonitor});
             this.toolStripMenuItemFile.Name = "toolStripMenuItemFile";
             this.toolStripMenuItemFile.Size = new System.Drawing.Size(68, 21);
             this.toolStripMenuItemFile.Text = "文件操作";
@@ -57,6 +59,12 @@
             this.toolStripMenuItemConfiguration.Name = "toolStripMenuItemConfiguration";
             this.toolStripMenuItemConfiguration.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItemConfiguration.Text = "配置文件";
+            // 
+            // toolStripMenuItemMonitor
+            // 
+            this.toolStripMenuItemMonitor.Name = "toolStripMenuItemMonitor";
+            this.toolStripMenuItemMonitor.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemMonitor.Text = "监视器";
             // 
             // FormMain
             // 
@@ -81,6 +89,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFile;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemConfiguration;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMonitor;
     }
 }
 

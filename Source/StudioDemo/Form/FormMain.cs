@@ -43,13 +43,23 @@ namespace StudioDemo
         private void InitializeEvent()
         {
             toolStripMenuItemConfiguration.Click += ToolStripMenuItemConfiguration_Click;
+            toolStripMenuItemMonitor.Click += ToolStripMenuItemMonitor_Click;
         }
+
+
         #endregion
 
         #region 配置文件演示
         private void ToolStripMenuItemConfiguration_Click(object sender, EventArgs e)
         {
             this.ShowMdiChildForm(new FormConfigurationDemo(), true);
+        }
+        #endregion
+
+        #region 监视器演示
+        private void ToolStripMenuItemMonitor_Click(object sender, EventArgs e)
+        {
+            this.ShowMdiChildForm(new FormDebugMonitorDemo(), true);
         }
         #endregion
     }
