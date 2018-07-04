@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemConfiguration = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemMonitor = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuStripMain
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemFile});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(784, 25);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStripMain.Location = new System.Drawing.Point(0, 0);
+            this.menuStripMain.Name = "menuStripMain";
+            this.menuStripMain.Size = new System.Drawing.Size(784, 25);
+            this.menuStripMain.TabIndex = 0;
+            this.menuStripMain.Text = "menuStrip1";
             // 
             // toolStripMenuItemFile
             // 
@@ -57,13 +57,13 @@
             // toolStripMenuItemConfiguration
             // 
             this.toolStripMenuItemConfiguration.Name = "toolStripMenuItemConfiguration";
-            this.toolStripMenuItemConfiguration.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemConfiguration.Size = new System.Drawing.Size(124, 22);
             this.toolStripMenuItemConfiguration.Text = "配置文件";
             // 
             // toolStripMenuItemMonitor
             // 
             this.toolStripMenuItemMonitor.Name = "toolStripMenuItemMonitor";
-            this.toolStripMenuItemMonitor.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemMonitor.Size = new System.Drawing.Size(124, 22);
             this.toolStripMenuItemMonitor.Text = "监视器";
             // 
             // FormMain
@@ -71,14 +71,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuStripMain);
             this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menuStripMain;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Studio Demo";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStripMain.ResumeLayout(false);
+            this.menuStripMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,7 +86,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStripMain;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFile;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemConfiguration;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMonitor;

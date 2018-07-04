@@ -61,8 +61,8 @@ namespace Studio
             {
                 if (item.Name == childForm.Name)
                 {
-                    item.Focus();
-                    item.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+                    //item.Focus();
+                    //item.WindowState = System.Windows.Forms.FormWindowState.Maximized;
                     return;
                 }
                 else

@@ -35,7 +35,7 @@ namespace StudioDemo
         {
             this.GetMdiClient().BackColor = Color.FromKnownColor(KnownColor.Window);
             this.SetMdiContainerBorderStyle(BorderStyle.None);
-            menuStrip1.DisableMinMaxBox();
+            menuStripMain.DisableMinMaxBox();
         }
         #endregion
 
@@ -44,9 +44,8 @@ namespace StudioDemo
         {
             toolStripMenuItemConfiguration.Click += ToolStripMenuItemConfiguration_Click;
             toolStripMenuItemMonitor.Click += ToolStripMenuItemMonitor_Click;
+            
         }
-
-
         #endregion
 
         #region 配置文件演示
