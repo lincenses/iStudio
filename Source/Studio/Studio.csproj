@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -49,6 +52,7 @@
     <Compile Include="Extension\FormMethod.cs" />
     <Compile Include="Monitor\DebugMonitor.cs" />
     <Compile Include="Monitor\MonitorMethod.cs" />
+    <Compile Include="Office\ExcelDocument.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\Admin.cs" />
     <Compile Include="Security\DESManager.cs" />
@@ -57,6 +61,10 @@
     <Compile Include="Security\SHA256Manager.cs" />
     <Compile Include="Security\SHA384Manager.cs" />
     <Compile Include="Security\SHA512Manager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Office\SDK\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="Office\SDK\Microsoft.Office.Interop.Excel.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
