@@ -37,7 +37,12 @@ namespace StudioDemo
         #region 创建数据库配置文件
         private void ToolStripButton1_Click(object sender, EventArgs e)
         {
-            
+            Studio.Office.ExcelDocument excelDoc = new Studio.Office.ExcelDocument("zzz.xlsx");
+            excelDoc.SetActiveSheet(1);
+            excelDoc.MoveSheet(3, 2);
+
+            excelDoc.SaveAs("zzzzzz");
+            excelDoc.Close();
         }
         #endregion
     }
