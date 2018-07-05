@@ -23,8 +23,8 @@ namespace StudioDemo
         #region 初始化窗体
         private void InitializeForm()
         {
-            Studio.Extension.FormMethod.SetMdiContainerBackColor(this, Color.FromKnownColor(KnownColor.ControlLight));
-            Studio.Extension.FormMethod.SetMdiContainerBorderStyle(this, BorderStyle.FixedSingle);
+            Studio.Extension.FormMethod.SetMdiContainerBackColor(this, Color.FromKnownColor(KnownColor.Window));
+            Studio.Extension.FormMethod.SetMdiContainerBorderStyle(this, BorderStyle.None);
         }
         #endregion
 
@@ -32,7 +32,7 @@ namespace StudioDemo
         private void InitializeEvent()
         {
             toolStripMenuItemConfiguration.Click += ToolStripMenuItemConfiguration_Click;
-            toolStripMenuItemMonitor.Click += ToolStripMenuItemMonitor_Click;
+            toolStripMenuItemExcel.Click += ToolStripMenuItemExcel_Click;
             
         }
         #endregion
@@ -46,9 +46,9 @@ namespace StudioDemo
         #endregion
 
         #region 监视器演示
-        private void ToolStripMenuItemMonitor_Click(object sender, EventArgs e)
+        private void ToolStripMenuItemExcel_Click(object sender, EventArgs e)
         {
-            Studio.Extension.FormMethod.ShowMdiChildForm(this, new FormDebugMonitorDemo(), true);
+            Studio.Extension.FormMethod.ShowMdiChildForm(this, new FormExcelDemo(), true);
 
         }
         #endregion

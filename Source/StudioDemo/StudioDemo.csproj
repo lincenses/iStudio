@@ -46,33 +46,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form\FormConfigurationDemo.cs">
+    <Compile Include="Forms\FormExcelDemo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FormConfigurationDemo.Designer.cs">
+    <Compile Include="Forms\FormExcelDemo.Designer.cs">
+      <DependentUpon>FormExcelDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormConfigurationDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormConfigurationDemo.Designer.cs">
       <DependentUpon>FormConfigurationDemo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FormDebugMonitorDemo.cs">
+    <Compile Include="Forms\FormDebugMonitorDemo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FormDebugMonitorDemo.Designer.cs">
+    <Compile Include="Forms\FormDebugMonitorDemo.Designer.cs">
       <DependentUpon>FormDebugMonitorDemo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FormMain.cs">
+    <Compile Include="Forms\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FormMain.Designer.cs">
+    <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form\FormConfigurationDemo.resx">
+    <EmbeddedResource Include="Forms\FormConfigurationDemo.resx">
       <DependentUpon>FormConfigurationDemo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FormDebugMonitorDemo.resx">
+    <EmbeddedResource Include="Forms\FormDebugMonitorDemo.resx">
       <DependentUpon>FormDebugMonitorDemo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FormMain.resx">
+    <EmbeddedResource Include="Forms\FormExcelDemo.resx">
+      <DependentUpon>FormExcelDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

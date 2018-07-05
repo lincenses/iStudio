@@ -46,15 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form\FormMonitor.cs">
+    <Compile Include="Forms\FormMonitor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FormMonitor.Designer.cs">
+    <Compile Include="Forms\FormMonitor.Designer.cs">
       <DependentUpon>FormMonitor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form\FormMonitor.resx">
+    <EmbeddedResource Include="Forms\FormMonitor.resx">
       <DependentUpon>FormMonitor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
