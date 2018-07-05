@@ -17,25 +17,14 @@ namespace StudioDemo
             InitializeComponent();
             InitializeForm();
             InitializeEvent();
-        }
 
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams createParams = base.CreateParams;
-                createParams.ExStyle |= 0x02000000;
-                //createParams.Style ^= 0x00C00000; //WS_CAPTION
-                return createParams;
-            }
         }
 
         #region 初始化窗体
         private void InitializeForm()
         {
-            this.GetMdiClient().BackColor = Color.FromKnownColor(KnownColor.Window);
-            this.SetMdiContainerBorderStyle(BorderStyle.None);
-            menuStripMain.DisableMinMaxBox();
+            Studio.Extension.FormMethod.SetMdiContainerBackColor(this, Color.FromKnownColor(KnownColor.ControlLight));
+            Studio.Extension.FormMethod.SetMdiContainerBorderStyle(this, BorderStyle.FixedSingle);
         }
         #endregion
 
@@ -51,14 +40,16 @@ namespace StudioDemo
         #region 配置文件演示
         private void ToolStripMenuItemConfiguration_Click(object sender, EventArgs e)
         {
-            this.ShowMdiChildForm(new FormConfigurationDemo(), true);
+            Studio.Extension.FormMethod.ShowMdiChildForm(this, new FormConfigurationDemo(), true);
+
         }
         #endregion
 
         #region 监视器演示
         private void ToolStripMenuItemMonitor_Click(object sender, EventArgs e)
         {
-            this.ShowMdiChildForm(new FormDebugMonitorDemo(), true);
+            Studio.Extension.FormMethod.ShowMdiChildForm(this, new FormDebugMonitorDemo(), true);
+
         }
         #endregion
     }
