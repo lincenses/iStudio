@@ -39,7 +39,11 @@ namespace StudioDemo
         {
             Studio.Office.ExcelDocument excelDoc = new Studio.Office.ExcelDocument("zzz.xlsx");
             excelDoc.SetActiveSheet(1);
-            excelDoc.MoveSheet(3, 2);
+            excelDoc.SetCellValue(2, 2, 123456);
+            excelDoc.SetActiveCell(2, 2);
+
+            object value = excelDoc.GetCellValue();
+
 
             excelDoc.SaveAs("zzzzzz");
             excelDoc.Close();

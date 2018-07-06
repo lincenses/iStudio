@@ -1333,9 +1333,49 @@ namespace Studio.Office
         }
         #endregion
 
+        #region 获取Sheet中已使用的行数
+        public int GetUsedRowsCount()
+        {
+            Microsoft.Office.Interop.Excel.Worksheet sheet = _Excel.ActiveSheet;
+            return sheet.UsedRange.Rows.Count;
+        }
+        #endregion
 
+        #region 获取Sheet中已使用的列数
+        public int GetUsedColumnCount(int sheetIndex = 0)
+        {
+            Microsoft.Office.Interop.Excel.Worksheet sheet = _Excel.ActiveSheet;
+            return sheet.UsedRange.Columns.Count;
+        }
+        #endregion
 
+        #region 设置活动单元格
+        public void SetActiveCell(int rowIndex, int columnIndex)
+        {
+            Microsoft.Office.Interop.Excel.Worksheet sheet = _Excel.ActiveSheet;
+            Microsoft.Office.Interop.Excel.Range range = sheet.Cells[rowIndex, columnIndex];
+            range.Select();
+            return;
+        }
+        #endregion
 
+        #region 获取单元格数据
+        public object GetCellValue(int rowIndex, int columnIndex)
+        {
+            Microsoft.Office.Interop.Excel.Worksheet activeSheet = _Excel.ActiveSheet;
+            Microsoft.Office.Interop.Excel.Range range = activeSheet.Cells[rowIndex, columnIndex];
+            return range.Value;
+        }
+        #endregion
+
+        #region 设置单元格数据
+        public void SetCellValue(int rowIndex, int columnIndex, object value)
+        {
+            Microsoft.Office.Interop.Excel.Worksheet activeSheet = _Excel.ActiveSheet;
+            Microsoft.Office.Interop.Excel.Range range = activeSheet.Cells[rowIndex, columnIndex];
+            range.Value = value;
+        }
+        #endregion
 
 
         #endregion
