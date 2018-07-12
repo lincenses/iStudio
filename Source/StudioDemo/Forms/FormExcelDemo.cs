@@ -42,11 +42,13 @@ namespace StudioDemo
             excelDoc.SetCellValue(2, 2, 123456);
             excelDoc.SetActiveCell(2, 2);
 
-            object value = excelDoc.GetCellValue();
+            object[] values = excelDoc.GetRowValues(1);
 
 
             excelDoc.SaveAs("zzzzzz");
             excelDoc.Close();
+
+            return;
         }
         #endregion
     }

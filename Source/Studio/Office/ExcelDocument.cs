@@ -1377,6 +1377,43 @@ namespace Studio.Office
         }
         #endregion
 
+        #region 获取行数据
+        public object[] GetRowValues(int rowIndex)
+        {
+            int columnCount = GetUsedColumnCount();
+            Microsoft.Office.Interop.Excel.Range range = GetRange(rowIndex, 1, rowIndex, columnCount);
+            object[,] allValues = range.Value;
+            object[] values = new object[columnCount];
+            for (int i = 0; i < columnCount; i++)
+            {
+                values[i] = allValues[1, i + 1];
+                if (values[i] == null)
+                {
+                    values[i] = "";
+                }
+            }
+            return values;
+        }
+        #endregion
+
+        #region 获取行数据
+        public object[] GetRowValues(int rowIndex, int columnIndex, int columnCount)
+        {
+            Microsoft.Office.Interop.Excel.Range range = GetRange(rowIndex, columnIndex, rowIndex, columnIndex + columnCount - 1);
+            object[,] allValues = range.Value;
+            object[] values = new object[columnCount];
+            for (int i = 0; i < columnCount; i++)
+            {
+                values[i] = allValues[1, i + 1];
+                if (values[i] == null)
+                {
+                    values[i] = "";
+                }
+            }
+            return values;
+        }
+        #endregion
+
 
         #endregion
 
