@@ -37,15 +37,15 @@ namespace StudioDemo
         #region 创建数据库配置文件
         private void ToolStripButton1_Click(object sender, EventArgs e)
         {
-            Studio.Office.ExcelDocument excelDoc = new Studio.Office.ExcelDocument("zzz.xlsx");
-            excelDoc.SetActiveSheet(1);
-            excelDoc.SetCellValue(2, 2, 123456);
-            excelDoc.SetActiveCell(2, 2);
+            Studio.Office.Excel.ExcelDocument excelDoc = new Studio.Office.Excel.ExcelDocument("AAA.xlsx");
 
-            object[] values = excelDoc.GetRowValues(1);
+            excelDoc = new Studio.Office.Excel.ExcelDocument();
+            excelDoc.SetCellValue(1, 1, 1);
+
+            excelDoc.SaveAsPDF("aaa.pdf");
 
 
-            excelDoc.SaveAs("zzzzzz");
+            
             excelDoc.Close();
 
             return;

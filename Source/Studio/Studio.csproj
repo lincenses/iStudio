@@ -52,7 +52,10 @@
     <Compile Include="Extension\FormMethod.cs" />
     <Compile Include="Monitor\DebugMonitor.cs" />
     <Compile Include="Monitor\MonitorMethod.cs" />
-    <Compile Include="Office\ExcelDocument.cs" />
+    <Compile Include="Office\Excel\ExcelDocument.cs" />
+    <Compile Include="Office\Excel\ExcelEnum.cs" />
+    <Compile Include="Office\Excel\ExcelSheet.cs" />
+    <Compile Include="Office\Excel\ExcelSheetCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\Admin.cs" />
     <Compile Include="Security\DESManager.cs" />
@@ -63,8 +66,8 @@
     <Compile Include="Security\SHA512Manager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Office\SDK\Microsoft.Office.Interop.Excel.dll" />
-    <Content Include="Office\SDK\Microsoft.Office.Interop.Excel.xml" />
+    <Content Include="Office\Excel\SDK\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="Office\Excel\SDK\Microsoft.Office.Interop.Excel.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
