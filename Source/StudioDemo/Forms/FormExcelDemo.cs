@@ -34,20 +34,17 @@ namespace StudioDemo
         }
         #endregion
 
-        #region 创建数据库配置文件
+        #region Excel Demo
         private void ToolStripButton1_Click(object sender, EventArgs e)
         {
-            Studio.Office.Excel.ExcelDocument excelDoc = new Studio.Office.Excel.ExcelDocument("AAA.xlsx");
-
-            excelDoc = new Studio.Office.Excel.ExcelDocument();
-            excelDoc.SetCellValue(1, 1, 1);
-
-            excelDoc.SaveAsPDF("aaa.pdf");
-
-
-            
-            excelDoc.Close();
-
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "*.xlsx|*.xlsx|*.xls|*.xls";
+            dialog.FileName = "ExcelColor.xlsx";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Studio.Demo.NPOIDemo.NPOIMethod.CreateExcelColorFile(dialog.FileName);
+                MessageBox.Show("创建成功！");
+            }
             return;
         }
         #endregion

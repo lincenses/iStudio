@@ -30,8 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+    <Reference Include="NPOI, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>NPOI\SDK\Net40\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>NPOI\SDK\Net40\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>NPOI\SDK\Net40\NPOI.OpenXml4Net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,13 +58,12 @@
     <Compile Include="Configuration\ConfigurationItem.cs" />
     <Compile Include="Configuration\DatabaseConfiguration.cs" />
     <Compile Include="Configuration\LanguageConfiguration.cs" />
+    <Compile Include="Demo\NPOIDemo\NPOIMethod.cs" />
     <Compile Include="Extension\FormMethod.cs" />
+    <Compile Include="Extension\NPOIMethod.cs" />
     <Compile Include="Monitor\DebugMonitor.cs" />
     <Compile Include="Monitor\MonitorMethod.cs" />
-    <Compile Include="Office\Excel\ExcelDocument.cs" />
-    <Compile Include="Office\Excel\ExcelEnum.cs" />
-    <Compile Include="Office\Excel\ExcelSheet.cs" />
-    <Compile Include="Office\Excel\ExcelSheetCollection.cs" />
+    <Compile Include="Office\Excel\ExcelColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\Admin.cs" />
     <Compile Include="Security\DESManager.cs" />
@@ -66,8 +74,27 @@
     <Compile Include="Security\SHA512Manager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Office\Excel\SDK\Microsoft.Office.Interop.Excel.dll" />
-    <Content Include="Office\Excel\SDK\Microsoft.Office.Interop.Excel.xml" />
+    <Content Include="Demo\NPOIDemo\SDK\logo\120_120.jpg" />
+    <Content Include="Demo\NPOIDemo\SDK\logo\240_240.png" />
+    <Content Include="Demo\NPOIDemo\SDK\logo\32_32.jpg" />
+    <Content Include="Demo\NPOIDemo\SDK\logo\60_60.jpg" />
+    <Content Include="Demo\NPOIDemo\SDK\Net20\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="Demo\NPOIDemo\SDK\Net20\NPOI.dll" />
+    <Content Include="Demo\NPOIDemo\SDK\Net20\NPOI.OOXML.dll" />
+    <Content Include="Demo\NPOIDemo\SDK\Net20\NPOI.OpenXml4Net.dll" />
+    <Content Include="Demo\NPOIDemo\SDK\Net20\NPOI.OpenXmlFormats.dll" />
+    <Content Include="Demo\NPOIDemo\SDK\Net20\NPOI.XML" />
+    <Content Include="Demo\NPOIDemo\SDK\Net40\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="Demo\NPOIDemo\SDK\Net40\NPOI.dll" />
+    <Content Include="Demo\NPOIDemo\SDK\Net40\NPOI.OOXML.dll" />
+    <Content Include="Demo\NPOIDemo\SDK\Net40\NPOI.OpenXml4Net.dll" />
+    <Content Include="Demo\NPOIDemo\SDK\Net40\NPOI.OpenXmlFormats.dll" />
+    <Content Include="Demo\NPOIDemo\SDK\Net40\NPOI.XML" />
+    <Content Include="Demo\NPOIDemo\SDK\Read Me.txt" />
+    <Content Include="Demo\NPOIDemo\SDK\Release Notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Demo\NPOIDemo\SDK\LICENSE" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

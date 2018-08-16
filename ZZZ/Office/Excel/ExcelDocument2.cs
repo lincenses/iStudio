@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Studio.Office.Excel
 {
-    public class ExcelDocument : IDisposable
+    public class ExcelDocument2 : IDisposable
     {
         #region API函数
         [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
@@ -77,7 +77,7 @@ namespace Studio.Office.Excel
         #region 构造函数
 
         #region 初始化此类的新实例
-        public ExcelDocument()
+        public ExcelDocument2()
         {
             _Excel = new Microsoft.Office.Interop.Excel.Application();
             GetWindowThreadProcessId(new IntPtr(_Excel.Hwnd), out _ProcessID);
@@ -85,7 +85,7 @@ namespace Studio.Office.Excel
             
         }
 
-        public ExcelDocument(string templateFileName)
+        public ExcelDocument2(string templateFileName)
         {
             _Excel = new Microsoft.Office.Interop.Excel.Application();
             GetWindowThreadProcessId(new IntPtr(_Excel.Hwnd), out _ProcessID);
@@ -93,7 +93,7 @@ namespace Studio.Office.Excel
 
         }
 
-        ~ExcelDocument()
+        ~ExcelDocument2()
         {
             Dispose(false);
         }
