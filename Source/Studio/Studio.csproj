@@ -58,9 +58,9 @@
     <Compile Include="Configuration\ConfigurationItem.cs" />
     <Compile Include="Configuration\DatabaseConfiguration.cs" />
     <Compile Include="Configuration\LanguageConfiguration.cs" />
-    <Compile Include="Demo\NPOIDemo\NPOIMethod.cs" />
+    <Compile Include="NPOI\NPOIDemo.cs" />
     <Compile Include="Extension\FormMethod.cs" />
-    <Compile Include="Extension\NPOIMethod.cs" />
+    <Compile Include="NPOI\NPOIMethod.cs" />
     <Compile Include="Monitor\DebugMonitor.cs" />
     <Compile Include="Monitor\MonitorMethod.cs" />
     <Compile Include="Office\Excel\ExcelColor.cs" />
@@ -74,27 +74,27 @@
     <Compile Include="Security\SHA512Manager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Demo\NPOIDemo\SDK\logo\120_120.jpg" />
-    <Content Include="Demo\NPOIDemo\SDK\logo\240_240.png" />
-    <Content Include="Demo\NPOIDemo\SDK\logo\32_32.jpg" />
-    <Content Include="Demo\NPOIDemo\SDK\logo\60_60.jpg" />
-    <Content Include="Demo\NPOIDemo\SDK\Net20\ICSharpCode.SharpZipLib.dll" />
-    <Content Include="Demo\NPOIDemo\SDK\Net20\NPOI.dll" />
-    <Content Include="Demo\NPOIDemo\SDK\Net20\NPOI.OOXML.dll" />
-    <Content Include="Demo\NPOIDemo\SDK\Net20\NPOI.OpenXml4Net.dll" />
-    <Content Include="Demo\NPOIDemo\SDK\Net20\NPOI.OpenXmlFormats.dll" />
-    <Content Include="Demo\NPOIDemo\SDK\Net20\NPOI.XML" />
-    <Content Include="Demo\NPOIDemo\SDK\Net40\ICSharpCode.SharpZipLib.dll" />
-    <Content Include="Demo\NPOIDemo\SDK\Net40\NPOI.dll" />
-    <Content Include="Demo\NPOIDemo\SDK\Net40\NPOI.OOXML.dll" />
-    <Content Include="Demo\NPOIDemo\SDK\Net40\NPOI.OpenXml4Net.dll" />
-    <Content Include="Demo\NPOIDemo\SDK\Net40\NPOI.OpenXmlFormats.dll" />
-    <Content Include="Demo\NPOIDemo\SDK\Net40\NPOI.XML" />
-    <Content Include="Demo\NPOIDemo\SDK\Read Me.txt" />
-    <Content Include="Demo\NPOIDemo\SDK\Release Notes.txt" />
+    <Content Include="NPOI\SDK\logo\120_120.jpg" />
+    <Content Include="NPOI\SDK\logo\240_240.png" />
+    <Content Include="NPOI\SDK\logo\32_32.jpg" />
+    <Content Include="NPOI\SDK\logo\60_60.jpg" />
+    <Content Include="NPOI\SDK\Net20\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="NPOI\SDK\Net20\NPOI.dll" />
+    <Content Include="NPOI\SDK\Net20\NPOI.OOXML.dll" />
+    <Content Include="NPOI\SDK\Net20\NPOI.OpenXml4Net.dll" />
+    <Content Include="NPOI\SDK\Net20\NPOI.OpenXmlFormats.dll" />
+    <Content Include="NPOI\SDK\Net20\NPOI.XML" />
+    <Content Include="NPOI\SDK\Net40\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="NPOI\SDK\Net40\NPOI.dll" />
+    <Content Include="NPOI\SDK\Net40\NPOI.OOXML.dll" />
+    <Content Include="NPOI\SDK\Net40\NPOI.OpenXml4Net.dll" />
+    <Content Include="NPOI\SDK\Net40\NPOI.OpenXmlFormats.dll" />
+    <Content Include="NPOI\SDK\Net40\NPOI.XML" />
+    <Content Include="NPOI\SDK\Read Me.txt" />
+    <Content Include="NPOI\SDK\Release Notes.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Demo\NPOIDemo\SDK\LICENSE" />
+    <None Include="NPOI\SDK\LICENSE" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

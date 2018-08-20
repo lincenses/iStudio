@@ -3,29 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Studio.Demo.NPOIDemo
+namespace Studio.Demo
 {
-    public class NPOIMethod
+    public class NPOIDemo
     {
         #region 创建Excel颜色列表
         public static void CreateExcelColorFile(string fileName)
         {
             System.IO.FileInfo fileInfo = new System.IO.FileInfo(fileName);
-
             // 创建Workbook。
-            NPOI.SS.UserModel.IWorkbook workbook = null;// new NPOI.XSSF.UserModel.XSSFWorkbook();
+            NPOI.SS.UserModel.IWorkbook workbook;
             if (fileInfo.Extension == ".xlsx")
-            {
-                workbook = new NPOI.XSSF.UserModel.XSSFWorkbook();
-            }
+            { workbook = new NPOI.XSSF.UserModel.XSSFWorkbook(); }
             else if (fileInfo.Extension == ".xls")
-            {
-                workbook = new NPOI.HSSF.UserModel.HSSFWorkbook();
-            }
+            { workbook = new NPOI.HSSF.UserModel.HSSFWorkbook(); }
             else
-            {
-                return;
-            }
+            { return; }
             // 创建Sheet
             NPOI.SS.UserModel.ISheet sheet = workbook.CreateSheet("ExcelColor");
             // 设置列宽。
