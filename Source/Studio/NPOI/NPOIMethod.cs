@@ -100,6 +100,18 @@ namespace Studio.Extension
         }
         #endregion
 
+        #region 从Sheet中获取固定列数的DataTable
+        //public static System.Data.DataTable GetDataTableFromSheet(NPOI.SS.UserModel.ISheet sheet, bool ignoreBlankRow, int startRowIndex, int startColumnIndex, int columnCount, bool firstRowIsColumnHead)
+        //{
+        //    if (sheet == null) { return null; }
+        //    System.Data.DataTable dataTable = new System.Data.DataTable(sheet.SheetName);
+        //    NPOI.SS.UserModel.IRow row = null;
+            
+
+
+        //}
+        #endregion
+
         #region 从Sheet中获取DataTable
         public static System.Data.DataTable GetDataTableFromSheet(NPOI.SS.UserModel.ISheet sheet, int startRowIndex, int startColumnIndex, bool firstRowIsColumnHead, bool autoAddColumn, bool ignoreBlankRow)
         {
@@ -112,7 +124,7 @@ namespace Studio.Extension
             { row = sheet.GetRow(startRowIndex); }
             if (row != null)
             {
-                for (int i = startColumnIndex; i < row.PhysicalNumberOfCells; i++)
+                for (int i = startColumnIndex; i < row.LastCellNum; i++)
                 {
                     NPOI.SS.UserModel.ICell cell = row.GetCell(i);
                     if (cell == null)
@@ -173,6 +185,57 @@ namespace Studio.Extension
         #endregion
 
         #region 从文件中获取DataTable
+        public static System.Data.DataTable GetDataTableFromExcelActiveSheet(string fileName, int startRowIndex, int startColumnIndex, bool firstRowIsColumnHead = true, bool autoAddColumn = false, bool ignoreBlankRow = true)
+        {
+            NPOI.SS.UserModel.IWorkbook workbook = GetWorkbookFromExcelFile(fileName);
+            if (workbook == null)
+            { return null; }
+            NPOI.SS.UserModel.ISheet sheet = workbook.GetSheetAt(workbook.ActiveSheetIndex);
+            if (sheet == null)
+            { return null; }
+            return GetDataTableFromSheet(sheet, startRowIndex, startColumnIndex, firstRowIsColumnHead, autoAddColumn, ignoreBlankRow);
+        }
+        #endregion
+
+        #region 从文件中获取DataTable
+        public static System.Data.DataTable GetDataTableFromExcelActiveSheet(string fileName, int startRowIndex, int startColumnIndex, bool ignoreBlankRow = true, params string[] columnHeadNames)
+        {
+            NPOI.SS.UserModel.IWorkbook workbook = GetWorkbookFromExcelFile(fileName);
+            if (workbook == null)
+            { return null; }
+            NPOI.SS.UserModel.ISheet sheet = workbook.GetSheetAt(workbook.ActiveSheetIndex);
+            if (sheet == null)
+            { return null; }
+            System.Data.DataTable dataTable = new System.Data.DataTable(sheet.SheetName);
+            for (int i = 0; i < columnHeadNames.Length; i++)
+            {
+                dataTable.Columns.Add(columnHeadNames[i]);
+            }
+            if (columnHeadNames.Length > 0)
+            {
+                for (int rowIndex = startRowIndex; rowIndex < sheet.PhysicalNumberOfRows; rowIndex++)
+                {
+                    NPOI.SS.UserModel.IRow row = sheet.GetRow(rowIndex);
+                    if (row != null)
+                    {
+                        System.Data.DataRow dataRow = dataTable.NewRow();
+                        dataTable.Rows.Add(dataRow);
+                        int dataTableColumnIndex = 0;
+                        for (int columnIndex = startColumnIndex; columnIndex < row.PhysicalNumberOfCells; columnIndex++)
+                        {
+                            if (dataTableColumnIndex >= dataTable.Columns.Count)
+                            { break; }
+                            dataRow[dataTableColumnIndex] = GetCellValue(row.GetCell(columnIndex));
+                            dataTableColumnIndex++;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        #endregion
+
+        #region 从文件中获取DataTable
         public static System.Data.DataTable GetDataTableFromExcelFile(string fileName, string sheetName, int startRowIndex, int startColumnIndex, bool firstRowIsColumnHead = true, bool autoAddColumn = false, bool ignoreBlankRow = true)
         {
             NPOI.SS.UserModel.IWorkbook workbook = GetWorkbookFromExcelFile(fileName);
@@ -223,110 +286,7 @@ namespace Studio.Extension
         }
         #endregion
 
-        //#region 从文件中获取数据
-        //public static System.Data.DataTable GetDataTabelFromExcelFile(string fileName, int sheetNumber, bool firstRowIsColumnHead = true, bool ignoreBlankRow = true, bool ignoreHiddenSheet = true)
-        //{
-        //    System.Data.DataTable dataTable = new System.Data.DataTable();
-        //    NPOI.SS.UserModel.IWorkbook workbook = GetWorkbookFromExcelFile(fileName);
-        //    if (workbook == null)
-        //    { return dataTable; }
-        //    NPOI.SS.UserModel.ISheet sheet = null;
-        //    int sheetNO = 1;
-        //    if (ignoreHiddenSheet)
-        //    {
-        //        for (int i = 0; i < workbook.NumberOfSheets; i++)
-        //        {
-        //            if (workbook.IsSheetHidden(i) || workbook.IsSheetVeryHidden(i))
-        //            {
-        //                continue;
-        //            }
-        //            if (sheetNO == sheetNumber)
-        //            {
-        //                sheet = workbook.GetSheetAt(i);
-        //                break;
-        //            }
-        //            sheetNO++;
-        //        }
-        //    }
-        //    else
-        //    { workbook.GetSheetAt(sheetNumber - 1); }
-        //    if (sheet == null)
-        //    { return dataTable; }
-        //    dataTable.TableName = sheet.SheetName;
-        //    if (firstRowIsColumnHead)
-        //    {
-        //        NPOI.SS.UserModel.IRow columnHeadRow = sheet.GetRow(0);
-        //        if (columnHeadRow != null)
-        //        {
-        //            for (int columnIndex = 0; columnIndex < columnHeadRow.LastCellNum; columnIndex++)
-        //            {
-        //                NPOI.SS.UserModel.ICell cell = columnHeadRow.GetCell(columnIndex);
-        //                if (cell == null)
-        //                { dataTable.Columns.Add(); }
-        //                else
-        //                { dataTable.Columns.Add(cell.ToString()); }
-        //            }
-        //        }
-        //    }
-        //    FillDataTable(sheet, firstRowIsColumnHead ? 1 : 0, 0, ignoreBlankRow, !firstRowIsColumnHead, dataTable);
-        //    return dataTable;
-        //}
-        //#endregion
-
-        //#region 从文件中获取数据
-        //public static System.Data.DataTable GetDataTabelFromExcelFile(string fileName, bool firstRowIsColumnHead, bool ignoreBlankRow)
-        //{
-        //    System.Data.DataTable dataSource = new System.Data.DataTable();
-        //    NPOI.SS.UserModel.IWorkbook workbook = GetWorkbookFromExcelFile(fileName);
-        //    if (workbook == null)
-        //    { return dataSource; }
-        //    NPOI.SS.UserModel.ISheet sheet = workbook.GetSheetAt(workbook.ActiveSheetIndex);
-        //    if (sheet == null)
-        //    { return dataSource; }
-        //    dataSource.TableName = sheet.SheetName;
-        //    if (firstRowIsColumnHead)
-        //    {
-        //        NPOI.SS.UserModel.IRow columnHeadRow = sheet.GetRow(0);
-        //        if (columnHeadRow != null)
-        //        {
-        //            for (int columnIndex = 0; columnIndex < columnHeadRow.LastCellNum; columnIndex++)
-        //            {
-        //                NPOI.SS.UserModel.ICell cell = columnHeadRow.GetCell(columnIndex);
-        //                if (cell == null)
-        //                { dataSource.Columns.Add(); }
-        //                else
-        //                { dataSource.Columns.Add(cell.ToString()); }
-        //            }
-        //        }
-        //    }
-        //    FillDataTable(sheet, firstRowIsColumnHead ? 1 : 0, 0, ignoreBlankRow, true, dataSource);
-        //    return dataSource;
-        //}
-        //#endregion
-
-        //#region 从文件中获取数据
-        //public static System.Data.DataTable GetDataTabelFromExcelFile(string fileName, int sheetNumber, int startColumnNumber, int startRowNumber, int columnCount, bool ignoreBlankRow, params string[] columnNames)
-        //{
-        //    System.Data.DataTable dataTable = new System.Data.DataTable();
-        //    for (int i = 0; i < columnCount; i++)
-        //    {
-        //        if (i < columnNames.Length)
-        //        { dataTable.Columns.Add(columnNames[i]); }
-        //        else
-        //        { dataTable.Columns.Add(); }
-        //    }
-        //    NPOI.SS.UserModel.IWorkbook workbook = GetWorkbookFromExcelFile(fileName);
-        //    if (workbook == null)
-        //    { return dataTable; }
-        //    if (sheetNumber < 0 || sheetNumber > workbook.NumberOfSheets)
-        //    { return dataTable; }
-        //    NPOI.SS.UserModel.ISheet sheet = workbook.GetSheetAt(sheetNumber - 1);
-        //    if (sheet == null)
-        //    { return dataTable; }
-        //    FillDataTable(sheet, startRowNumber < 1 ? 0 : startRowNumber - 1, startColumnNumber < 1 ? 0 : startColumnNumber - 1, ignoreBlankRow, false, dataTable);
-        //    return dataTable;
-        //}
-        //#endregion
+        
 
         #endregion
 
